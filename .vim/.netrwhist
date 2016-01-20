@@ -1,0 +1,3 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/mattmenzenski/Documents/School/Kansas/Coding/2015_08_15_Thrunc_RNCSearchTool/thrunc'
