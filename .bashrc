@@ -17,6 +17,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 test -e ~/.dircolors && \
     eval `gdircolors -b ~/.dircolors`
 
-alias ls="gls -GFlash --color=always"
+alias ls="gls -G --color=always"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
