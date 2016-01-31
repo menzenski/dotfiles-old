@@ -76,6 +76,12 @@ Plugin 'scrooloose/nerdtree'
 " A plugin of NERDTree showing git status
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+" Preview colors in source code while editing
+Plugin 'ap/vim-css-color'
+
+" Flake8 plugin for Vim
+Plugin 'nvie/vim-flake8'
+
 call vundle#end() " required
 filetype plugin indent on " required
 
@@ -114,6 +120,7 @@ let python_version_2 = 1
 " autocmd FileType python set sw=4 " set shiftwidth to four spaces in Python
 " autocmd FileType python set ts=4 " set tabstop to four spaces in Python
 " autocmd FileType python set sts=4 " set softtabstop to four spaces in Python
+let g:flake8_show_in_gutter=1 " show flake8 signs in gutter
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4
@@ -131,6 +138,20 @@ au BufNewFile,BufRead *.tex
     \ set expandtab
     \ set autoindent
 
+au BufNewFile,BufRead *.html,*.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+    \ set expandtab
+    \ set autoindent
+
+au BufNewFile,BufRead *.js
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set expandtab
+    \ set autoindent
+
 set sw=4 " set shiftwidth to four spaces everywhere
 set ts=4 " set tabstop to four spaces everywhere
 set expandtab " insert spaces whenever tab is pressed
@@ -138,8 +159,8 @@ set expandtab " insert spaces whenever tab is pressed
 set encoding=utf-8
 set clipboard=unnamed " access OS X system clipboard
 
-autocmd FileType html set sw=2 " set shiftwidth to two spaces in html
-autocmd FileType html set ts=2 " set tabstop to two spaces in html
+" autocmd FileType html set sw=2 " set shiftwidth to two spaces in html
+" autocmd FileType html set ts=2 " set tabstop to two spaces in html
 
 autocmd! Filetype c,cpp,java,php call CSyntaxAfter()
 
