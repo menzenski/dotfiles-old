@@ -82,6 +82,9 @@ Plugin 'ap/vim-css-color'
 " Flake8 plugin for Vim
 Plugin 'nvie/vim-flake8'
 
+" A vim script to provide CamelCase motion through words
+Plugin 'bkad/CamelCaseMotion'
+
 call vundle#end() " required
 filetype plugin indent on " required
 
@@ -169,5 +172,15 @@ nnoremap <space> za
 
 " show docstrings of folded classes and functions ( 0 = don't show them )
 let g:SimpylFold_docstring_preview = 1
+
+" add keymapping to move through CamelCase and snake_case words
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
 
 set showcmd
