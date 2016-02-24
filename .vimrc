@@ -85,6 +85,24 @@ Plugin 'nvie/vim-flake8'
 " A vim script to provide CamelCase motion through words
 Plugin 'bkad/CamelCaseMotion'
 
+" Enhanced javascript syntax file for Vim
+" Plugin 'jelera/vim-javascript-syntax'
+
+" vastly improved JavaScript indentation and syntax support in Vim
+Plugin 'pangloss/vim-javascript'
+
+" A vim plugin for highlighting and indenting JST/EJS syntax
+Plugin 'briancollins/vim-jst'
+
+" A better JSON for Vim
+Plugin 'elzr/vim-json'
+
+" Add additional support for Ansible in VIM
+Plugin 'chase/vim-ansible-yaml'
+
+" Syntax for Fountain screenplay files
+Plugin 'vim-scripts/fountain.vim'
+
 call vundle#end() " required
 filetype plugin indent on " required
 
@@ -141,7 +159,7 @@ au BufNewFile,BufRead *.tex
     \ set expandtab
     \ set autoindent
 
-au BufNewFile,BufRead *.html,*.css
+au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
@@ -154,6 +172,8 @@ au BufNewFile,BufRead *.js
     \ set shiftwidth=4
     \ set expandtab
     \ set autoindent
+
+"" au BufNewFile,BufRead *.ejs set filetype=html
 
 set sw=4 " set shiftwidth to four spaces everywhere
 set ts=4 " set tabstop to four spaces everywhere
