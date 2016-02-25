@@ -11,3 +11,5 @@ test -e ~/.dircolors && \
 alias ls="gls -G -F --color=always"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
