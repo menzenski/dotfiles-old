@@ -103,6 +103,12 @@ Plugin 'chase/vim-ansible-yaml'
 " Syntax for Fountain screenplay files
 Plugin 'vim-scripts/fountain.vim'
 
+" Vim/Ruby configuration files
+Plugin 'vim-ruby/vim-ruby'
+
+" Ruby on Rails power tools
+Plugin 'tpope/vim-rails'
+
 call vundle#end() " required
 filetype plugin indent on " required
 
@@ -157,21 +163,23 @@ au BufNewFile,BufRead *.tex
     \ set softtabstop=2
     \ set shiftwidth=2
     \ set expandtab
-    \ set autoindent
+    " \ set autoindent
 
 au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
     \ set expandtab
-    \ set autoindent
+    " \ set autoindent
 
 au BufNewFile,BufRead *.js
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
     \ set expandtab
-    \ set autoindent
+    " \ set autoindent
+
+autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 "" au BufNewFile,BufRead *.ejs set filetype=html
 

@@ -17,5 +17,11 @@ export PATH="/Users/mattmenzenski/anaconda/bin:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+# add Postgres.app's psql command line tools
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
+# include Anaconda libraries in the $DYLD_FALLBACK_LIBRARY_PATH
+export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH
+
+
 # call ~/.bashrc, since it's not called automatically on OS X
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
