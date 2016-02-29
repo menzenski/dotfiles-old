@@ -93,6 +93,11 @@ set_prompts() {
 
     export PS1
 }
-
 set_prompts
 unset set_prompts
+
+# delete LaTeX auxiliary files in current directory (use with caution!)
+alias rmtex="rm *.aux *.log *.out *.synctex.gz"
+
+export NVM_DIR="/Users/mattmenzenski/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

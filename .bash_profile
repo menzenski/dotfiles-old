@@ -22,6 +22,9 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 # include Anaconda libraries in the $DYLD_FALLBACK_LIBRARY_PATH
 export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH
 
+# go path
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # call ~/.bashrc, since it's not called automatically on OS X
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi

@@ -109,6 +109,9 @@ Plugin 'vim-ruby/vim-ruby'
 " Ruby on Rails power tools
 Plugin 'tpope/vim-rails'
 
+" React JSX syntax highlighting and indenting for vim.
+Plugin 'mxw/vim-jsx'
+
 call vundle#end() " required
 filetype plugin indent on " required
 
@@ -178,6 +181,8 @@ au BufNewFile,BufRead *.js
     \ set shiftwidth=4
     \ set expandtab
     " \ set autoindent
+
+let g:jsx_ext_required = 0 " allow JSX syntax in JavaScript files
 
 autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
