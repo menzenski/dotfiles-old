@@ -26,5 +26,10 @@ export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PAT
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+## virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
 # call ~/.bashrc, since it's not called automatically on OS X
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi

@@ -112,11 +112,24 @@ Plugin 'tpope/vim-rails'
 " React JSX syntax highlighting and indenting for vim.
 Plugin 'mxw/vim-jsx'
 
+" Syntax for JavaScript libraries
+Plugin 'othree/javascript-libraries-syntax.vim'
+
+" Add CSS3 syntax support to vim's built-in `syntax/css.vim`.
+Plugin 'hail2u/vim-css3-syntax'
+
+" mustache and handlebars mode for vim
+Plugin 'mustache/vim-mustache-handlebars'
+
 call vundle#end() " required
 filetype plugin indent on " required
 
 " vim syntax files live in /usr/share/vim/vim73/syntax/
-syntax enable " show syntax highlighting
+syntax enable    " show syntax highlighting
+set cursorline   " highlight current line
+set cursorcolumn " highlight current column
+set incsearch    " search as characters are entered
+set hlsearch     " highlight search matches
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=16
@@ -134,6 +147,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
 
 " open NERDTree with Ctrl+n
 map <C-N> :NERDTreeToggle<CR>
@@ -203,8 +221,19 @@ autocmd! Filetype c,cpp,java,php call CSyntaxAfter()
 " enable code folding with the spacebar
 nnoremap <space> za
 
-" show docstrings of folded classes and functions ( 0 = don't show them )
+" show docstrings of folded Python classes and functions
 let g:SimpylFold_docstring_preview = 1
+
+" turn on all Go syntax highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" used JavaScript libraries
+let g:used_javascript_libs = 'jquery,angularjs,react'
 
 " add keymapping to move through CamelCase and snake_case words
 map <silent> w <Plug>CamelCaseMotion_w
