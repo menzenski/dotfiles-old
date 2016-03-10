@@ -1,240 +1,87 @@
-set nocompatible " be iMproved, required
-filetype off " required
-
+" Matt Menzenski
+" Vundle Plugins {{{
+set nocompatible                " be iMproved, required
+filetype off                    " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" lean & mean status/tabline for vim that's light as air
-Plugin 'bling/vim-airline'
-
-" precision colorscheme for the vim text editor
-Plugin 'altercation/vim-colors-solarized'
-
-" Python syntax highlighting script for Vim
-Plugin 'hdima/python-syntax'
-
-" a Git wrapper so awesome, it should be illegal
-Plugin 'tpope/vim-fugitive'
-
-" quoting/parenthesizing made simple
-Plugin 'tpope/vim-surround'
-
-" enable an auto-close char feature for ( [ {
-Plugin 'Townk/vim-autoclose'
-
-" using the jedi autocompletion library for vim.
-" Plugin 'davidhalter/jedi-vim'
-
-" implement TextMate snippets feature in Vim.
-" snippets live in ~/.vim/bundle/snipmate.vim/snippets
-Plugin 'msanders/snipmate.vim'
-
-" better whitespace highlighting for Vim.
-Plugin 'ntpeters/vim-better-whitespace'
-
-" Markdown support for vim
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-
-" Operator highlighting for C-like languages
-Plugin 'vim-scripts/cSyntaxAfter'
-
-" An up-to-date jinja2 syntax file
-Plugin 'Glench/Vim-Jinja2-Syntax'
-" there's also this one, is it any better?
-" Repository for Jinja support in vim.
-" Plugin 'mitsuhiko/vim-jinja'
-
-" Go development plugin for Vim
-Plugin 'fatih/vim-go'
-
-" Vim runtime files for Swift
-Plugin 'keith/swift.vim'
-
-" Vim plugin that uses clang for completing C/C++ code
-Plugin 'Rip-Rip/clang_complete'
-
-" iOS plugin for Vim
-Plugin 'eraserhd/vim-ios'
-
-" Vim plugin for Cocoa/Objective-C development
-Plugin 'msanders/cocoa.vim'
-
-" Vim python-mode, PyLint, Rope, Pydoc, breakpoints from box
-" Plugin 'klen/python-mode'
-
-" No-BS Python code folding for Vim
-" Plugin 'tmhedberg/SimpylFold'
-
-" A tree explorer plugin for vim
-Plugin 'scrooloose/nerdtree'
-
-" A plugin of NERDTree showing git status
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
-" Preview colors in source code while editing
-Plugin 'ap/vim-css-color'
-
-" Flake8 plugin for Vim
-Plugin 'nvie/vim-flake8'
-
-" A vim script to provide CamelCase motion through words
-Plugin 'bkad/CamelCaseMotion'
-
-" Enhanced javascript syntax file for Vim
-" Plugin 'jelera/vim-javascript-syntax'
-
-" vastly improved JavaScript indentation and syntax support in Vim
-Plugin 'pangloss/vim-javascript'
-
-" A vim plugin for highlighting and indenting JST/EJS syntax
-Plugin 'briancollins/vim-jst'
-
-" A better JSON for Vim
-Plugin 'elzr/vim-json'
-
-" Add additional support for Ansible in VIM
-Plugin 'chase/vim-ansible-yaml'
-
-" Syntax for Fountain screenplay files
-Plugin 'vim-scripts/fountain.vim'
-
-" Vim/Ruby configuration files
-Plugin 'vim-ruby/vim-ruby'
-
-" Ruby on Rails power tools
-Plugin 'tpope/vim-rails'
-
-" React JSX syntax highlighting and indenting for vim.
-Plugin 'mxw/vim-jsx'
-
-" Syntax for JavaScript libraries
-Plugin 'othree/javascript-libraries-syntax.vim'
-
-" Add CSS3 syntax support to vim's built-in `syntax/css.vim`.
-Plugin 'hail2u/vim-css3-syntax'
-
-" mustache and handlebars mode for vim
-Plugin 'mustache/vim-mustache-handlebars'
-
-call vundle#end() " required
-filetype plugin indent on " required
-
-" vim syntax files live in /usr/share/vim/vim73/syntax/
-syntax enable    " show syntax highlighting
-set cursorline   " highlight current line
-set cursorcolumn " highlight current column
-set incsearch    " search as characters are entered
-set hlsearch     " highlight search matches
+Plugin 'VundleVim/Vundle.vim'   " let Vundle manage Vundle, required
+Plugin 'bling/vim-airline'      " lean & mean status/tabline for vim
+Plugin 'altercation/vim-colors-solarized' " precision colorscheme
+Plugin 'hdima/python-syntax'    " Python syntax highlighting script for Vim
+Plugin 'tpope/vim-fugitive'     " Git wrapper so awesome it should be illegal
+Plugin 'tpope/vim-surround'     " quoting/parenthesizing made simple
+Plugin 'Townk/vim-autoclose'    " enable an auto-close feature for ( [ {
+" Plugin 'davidhalter/jedi-vim' " use jedi autocompletion library for vim
+Plugin 'msanders/snipmate.vim'  " implement TextMate snippets feature in Vim
+Plugin 'ntpeters/vim-better-whitespace' " better whitespace highlighting
+Plugin 'godlygeek/tabular'      " Vim script for text filtering and alignment
+Plugin 'plasticboy/vim-markdown' " Markdown Vim mode
+Plugin 'vim-scripts/cSyntaxAfter' " Operator highlighting for C-like languages
+Plugin 'Glench/Vim-Jinja2-Syntax' " An up-to-date jinja2 syntax file
+Plugin 'fatih/vim-go'           " Go development plugin for Vim
+Plugin 'keith/swift.vim'        " Vim runtime files for Swift
+Plugin 'Rip-Rip/clang_complete' " use clang for completing C/C++ code
+Plugin 'eraserhd/vim-ios'       " iOS plugin for Vim
+Plugin 'msanders/cocoa.vim'     " Vim plugin for Cocoa/Obj-C development
+" Plugin 'klen/python-mode'     " python-mode, PyLint, Rope, Pydoc
+" Plugin 'tmhedberg/SimpylFold' " No-BS Python code folding for Vim
+Plugin 'scrooloose/nerdtree'    " A tree explorer plugin for Vim
+Plugin 'Xuyuanp/nerdtree-git-plugin' " a plugin of NERDtree showing git status
+Plugin 'ap/vim-css-color'       " Preview colors in source code while editing
+Plugin 'nvie/vim-flake8'        " Flake8 plugin for Vim
+Plugin 'bkad/CamelCaseMotion'   " provide CamelCase motion through words
+Plugin 'pangloss/vim-javascript' " JavaScript indentation and syntax support
+Plugin 'briancollins/vim-jst'   " highlight and indent JST/EJS syntax
+Plugin 'elzr/vim-json'          " a better JSON for Vim
+Plugin 'chase/vim-ansible-yaml' " Add additional support for Ansible/YAML
+Plugin 'vim-scripts/fountain.vim' " Syntax for Fountain screenplay files
+Plugin 'vim-ruby/vim-ruby'      " Vim/Ruby configuration files
+Plugin 'tpope/vim-rails'        " Ruby on Rails power tools
+Plugin 'mxw/vim-jsx'            " React JSX syntax highlighting and indenting
+Plugin 'othree/javascript-libraries-syntax.vim' " syntax for JS libraries
+Plugin 'hail2u/vim-css3-syntax' " add CSS3 support to syntax/css.vim
+Plugin 'mustache/vim-mustache-handlebars' " mustache + handlebars mode for Vim
+call vundle#end()               " required
+filetype plugin indent on       " required
+" }}}
+" Colors, Highlighting, Visuals {{{
+syntax enable                   " show syntax highlighting
+set cursorline                  " highlight current line
+set cursorcolumn                " highlight current column
+set colorcolumn=79              " show 79-character margin
+set number                      " show line numbers
+set showcmd                     " show command in status bar
+set laststatus=2                " always show status bar
+set so=999                      " try to always keep cursor in center
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=16
-let g:airline_powerline_fonts = 1 " show nice pointy symbols
-
-
-" toggle dark/light theme
-call togglebg#map("<F5>")
-
-set splitbelow " :sv opens a new file below the current file
-" set splitright " :vs opens a new file to the right of the current file
-
+let g:airline_powerline_fonts=1 " show nice pointy Powerline symbols
+set splitbelow                  " :sv opens a new file below current file
+" }}}
+" Searching {{{
+set incsearch                   " search as characters are entered
+set hlsearch                    " highlight search matches
+" }}}
+" Foldings {{{
+set foldmethod=indent           " fold based on indentation level
+set foldnestmax=10              " maximum fold depth of ten levels
+set foldenable                  " don't fold files by default on open
+set foldlevelstart=10           " start with fold level of 1
+" }}}
+" Key Remaps and Commands {{{
+call togglebg#map("<F5>")       " toggle dark/light theme with F5 key
 " navigate between splits with Ctrl + directional key
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-
-
-" open NERDTree with Ctrl+n
-map <C-N> :NERDTreeToggle<CR>
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-set colorcolumn=79 " show 79-character margin (79 is per PEP8)
-set number " show line numbers
-set laststatus=2 " always show status bar
-set so=999 " set scrolloff to 999 lines: always keep the cursor in center
-
-let python_highlight_all = 1 " show all possible Python syntax highlighting
-let python_version_2 = 1
-" autocmd FileType python set sw=4 " set shiftwidth to four spaces in Python
-" autocmd FileType python set ts=4 " set tabstop to four spaces in Python
-" autocmd FileType python set sts=4 " set softtabstop to four spaces in Python
-let g:flake8_show_in_gutter=1 " show flake8 signs in gutter
-
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-    " \ set textwidth=79
-
-au BufNewFile,BufRead *.tex
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-    \ set expandtab
-    " \ set autoindent
-
-au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-    \ set expandtab
-    " \ set autoindent
-
-au BufNewFile,BufRead *.js
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set expandtab
-    " \ set autoindent
-
-let g:jsx_ext_required = 0 " allow JSX syntax in JavaScript files
-
-autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-
-"" au BufNewFile,BufRead *.ejs set filetype=html
-
-set sw=4 " set shiftwidth to four spaces everywhere
-set ts=4 " set tabstop to four spaces everywhere
-set expandtab " insert spaces whenever tab is pressed
-
-set encoding=utf-8
-set clipboard=unnamed " access OS X system clipboard
-
-" autocmd FileType html set sw=2 " set shiftwidth to two spaces in html
-" autocmd FileType html set ts=2 " set tabstop to two spaces in html
-
-autocmd! Filetype c,cpp,java,php call CSyntaxAfter()
-
 " enable code folding with the spacebar
 nnoremap <space> za
-
-" show docstrings of folded Python classes and functions
-let g:SimpylFold_docstring_preview = 1
-
-" turn on all Go syntax highlighting
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" used JavaScript libraries
-let g:used_javascript_libs = 'jquery,angularjs,react'
-
 " add keymapping to move through CamelCase and snake_case words
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
@@ -244,5 +91,76 @@ sunmap w
 sunmap b
 sunmap e
 sunmap ge
+" }}}
+" NERDTree {{{
+" open NERDTree with Ctrl + N
+map <C-N> :NERDTreeToggle<CR>
+" close vim if the only window left open is a NERDTree window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }}}
+" Language-Specific Configuration {{{
+" Python {{{
+let python_highlight_all=1      " show all possible Python syntax highlighting
+let python_version_2=1          " default to Python 2
+let g:flake8_show_in_gutter=1   " show Flake8 signs in left gutter
+let g:SimpylFold_docstring_preview=1 " show docstrings of folded class/func
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+" }}}
+" TeX {{{
+au BufNewFile,BufRead *.tex
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+    \ set expandtab
+" }}}
+" HTML, CSS, XML {{{
+au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+    \ set expandtab
+" }}}
+" JavaScript {{{
+" specify libraries for syntax highlighting
+let g:used_javascript_libs = 'jquery,angularjs,react'
+au BufNewFile,BufRead *.js
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set expandtab
+let g:jsx_ext_required=0        " allow JSX syntax in JavaScript files
+" }}}
+" Ruby {{{
+au BufNewFile,BufRead *.rb
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+    \ set expandtab
+" }}}
+" Golang {{{
+" turn on all Go syntax highlighting
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_structs=1
+let g:go_highlight_interfaces=1
+let g:go_highlight_operators=1
+let g:go_highlight_build_constraints=1
+" }}}
+" C-like languages {{{
+autocmd! Filetype c,cpp,java,php call CSyntaxAfter()
+" }}}
+" }}}
+" General Configuration {{{
+set sw=4                        " set shiftwidth to four spaces
+set ts=4                        " set tabstop to four spaces
+set expandtab                   " insert spaces when tab is pressed
+set modelines=1                 " tell Vim to check the last line of this file
+" }}}
 
-set showcmd
+" vim:foldmethod=marker:foldlevel=0
