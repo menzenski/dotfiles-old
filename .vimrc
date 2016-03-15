@@ -42,6 +42,9 @@ Plugin 'mxw/vim-jsx'            " React JSX syntax highlighting and indenting
 Plugin 'othree/javascript-libraries-syntax.vim' " syntax for JS libraries
 Plugin 'hail2u/vim-css3-syntax' " add CSS3 support to syntax/css.vim
 Plugin 'mustache/vim-mustache-handlebars' " mustache + handlebars mode for Vim
+Plugin 'Shutnik/jshint2.vim'    " JavaScript code quality checker
+Plugin 'dag/vim2hs'             " vim for Haskell
+Plugin 'pbrisbin/vim-syntax-shakespeare' " Haskell HTML template highlighting
 call vundle#end()               " required
 filetype plugin indent on       " required
 " }}}
@@ -104,6 +107,12 @@ let python_highlight_all=1      " show all possible Python syntax highlighting
 let python_version_2=1          " default to Python 2
 let g:flake8_show_in_gutter=1   " show Flake8 signs in left gutter
 let g:SimpylFold_docstring_preview=1 " show docstrings of folded class/func
+" use colorscheme colors to highlight Flake8 markers
+highlight link Flake8_Error Error
+highlight link Flake8_Warning WarningMsg
+highlight link Flake8_Complexity WarningMsg
+highlight link Flake8_Naming WarningMsg
+highlight link Flake8_PyFlake WarningMsg
 au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
@@ -111,6 +120,7 @@ au BufNewFile,BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
+autocmd BufWritePost *.py call Flake8() " lint every time file is written
 " }}}
 " TeX {{{
 au BufNewFile,BufRead *.tex

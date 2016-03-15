@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/mattmenzenski/Documents/School/Kansas/Coding/2015_08_15_Thrunc_RNCSearchTool/thrunc'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/mattmenzenski/Documents/School/Kansas/Coding/2016_02_21_UdemyAngularJSJumpstart/section_02/app/controllers'
+let g:netrw_dirhist_2='/Users/mattmenzenski/Documents/School/Kansas/Coding/2016_03_07_UdemyMasteringMeteor/section_01/quietearth/client/templates/header'
+let g:netrw_dirhist_3='/Users/mattmenzenski/Documents/School/Kansas/Coding/2016_03_07_UdemyMasteringMeteor/section_01/quietearth/client/stylesheets'
