@@ -45,6 +45,7 @@ Plugin 'mustache/vim-mustache-handlebars' " mustache + handlebars mode for Vim
 Plugin 'Shutnik/jshint2.vim'    " JavaScript code quality checker
 Plugin 'dag/vim2hs'             " vim for Haskell
 Plugin 'pbrisbin/vim-syntax-shakespeare' " Haskell HTML template highlighting
+Plugin 'easymotion/vim-easymotion' " Vim motions on speed!
 call vundle#end()               " required
 filetype plugin indent on       " required
 " }}}
@@ -130,7 +131,7 @@ au BufNewFile,BufRead *.tex
     \ set expandtab
 " }}}
 " HTML, CSS, XML {{{
-au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst
+au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst,*.nunjucks,*.njk
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
@@ -171,6 +172,13 @@ set sw=4                        " set shiftwidth to four spaces
 set ts=4                        " set tabstop to four spaces
 set expandtab                   " insert spaces when tab is pressed
 set modelines=1                 " tell Vim to check the last line of this file
+let mapleader=","               " use comma as <leader>
+set hidden                      " hide buffers instead of closing them
+set mouse=a                     " allow mouse
+" edit vimrc with ,ev
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+" reload vimrc with ,sv
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
