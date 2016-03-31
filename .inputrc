@@ -1,0 +1,13 @@
+set editing-mode vi
+set keymap vi
+
+set completion-ignore-case On
+
+set input-meta on
+set output-meta on
+set convert-meta off
+
+$if mode=vi
+    set keymap vi-command
+    "gg": beginning-of-history
+    "G": end-of-history
