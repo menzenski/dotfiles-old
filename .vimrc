@@ -115,44 +115,44 @@ highlight link Flake8_Complexity WarningMsg
 highlight link Flake8_Naming WarningMsg
 highlight link Flake8_PyFlake WarningMsg
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
 autocmd BufWritePost *.py call Flake8() " lint every time file is written
 " }}}
 " TeX {{{
 au BufNewFile,BufRead *.tex
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-    \ set expandtab
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
 " }}}
 " HTML, CSS, XML {{{
 au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst,*.nunjucks,*.njk
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-    \ set expandtab
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
 " }}}
 " JavaScript {{{
 " specify libraries for syntax highlighting
 let g:used_javascript_libs = 'jquery,angularjs,react'
 au BufNewFile,BufRead *.js
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set expandtab
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
 let g:jsx_ext_required=0        " allow JSX syntax in JavaScript files
 " }}}
 " Ruby {{{
 au BufNewFile,BufRead *.rb
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-    \ set expandtab
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
 " }}}
 " Golang {{{
 " turn on all Go syntax highlighting
@@ -174,7 +174,6 @@ set expandtab                   " insert spaces when tab is pressed
 set modelines=1                 " tell Vim to check the last line of this file
 let mapleader=","               " use comma as <leader>
 set hidden                      " hide buffers instead of closing them
-set mouse=a                     " allow mouse
 " edit vimrc with ,ev
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 " reload vimrc with ,sv
