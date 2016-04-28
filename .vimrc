@@ -46,6 +46,9 @@ Plugin 'Shutnik/jshint2.vim'    " JavaScript code quality checker
 Plugin 'dag/vim2hs'             " vim for Haskell
 Plugin 'pbrisbin/vim-syntax-shakespeare' " Haskell HTML template highlighting
 Plugin 'easymotion/vim-easymotion' " Vim motions on speed!
+Plugin 'groenewege/vim-less'    " vim syntax for LESS (dynamic CSS)
+Plugin 'tfnico/vim-gradle'      " recognize .gradle files as groovy syntax
+Plugin 'mhinz/vim-startify'     " the fancy start screen for Vim
 call vundle#end()               " required
 filetype plugin indent on       " required
 " }}}
@@ -95,6 +98,11 @@ sunmap w
 sunmap b
 sunmap e
 sunmap ge
+" search for the current visual selection
+vnoremap // y/<C-R>"<CR>
+" treat uppercase W and Q like their lowercase versions
+command! -bang -range=% -complete=file -nargs=* W <line1>,<line2>write<bang> <args>
+command! -bang Q quit<bang>
 " }}}
 " NERDTree {{{
 " open NERDTree with Ctrl + N
