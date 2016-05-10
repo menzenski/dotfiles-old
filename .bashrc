@@ -97,7 +97,7 @@ set_prompts
 unset set_prompts
 
 # delete LaTeX auxiliary files in current directory (use with caution!)
-alias rmtex="rm *.aux *.log *.out *.synctex.gz"
+alias rmtex="rm *.aux *.log *.out *.synctex.gz *.fdb_latexmk *.fls"
 
 export NVM_DIR="/Users/mattmenzenski/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

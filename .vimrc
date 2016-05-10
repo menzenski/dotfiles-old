@@ -5,50 +5,55 @@ filetype off                    " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'   " let Vundle manage Vundle, required
-Plugin 'bling/vim-airline'      " lean & mean status/tabline for vim
-Plugin 'altercation/vim-colors-solarized' " precision colorscheme
-Plugin 'hdima/python-syntax'    " Python syntax highlighting script for Vim
-Plugin 'tpope/vim-fugitive'     " Git wrapper so awesome it should be illegal
-Plugin 'tpope/vim-surround'     " quoting/parenthesizing made simple
-Plugin 'Townk/vim-autoclose'    " enable an auto-close feature for ( [ {
-" Plugin 'davidhalter/jedi-vim' " use jedi autocompletion library for vim
-Plugin 'msanders/snipmate.vim'  " implement TextMate snippets feature in Vim
-Plugin 'ntpeters/vim-better-whitespace' " better whitespace highlighting
-Plugin 'godlygeek/tabular'      " Vim script for text filtering and alignment
-Plugin 'plasticboy/vim-markdown' " Markdown Vim mode
-Plugin 'vim-scripts/cSyntaxAfter' " Operator highlighting for C-like languages
-Plugin 'Glench/Vim-Jinja2-Syntax' " An up-to-date jinja2 syntax file
-Plugin 'fatih/vim-go'           " Go development plugin for Vim
-Plugin 'keith/swift.vim'        " Vim runtime files for Swift
-Plugin 'Rip-Rip/clang_complete' " use clang for completing C/C++ code
-Plugin 'eraserhd/vim-ios'       " iOS plugin for Vim
-Plugin 'msanders/cocoa.vim'     " Vim plugin for Cocoa/Obj-C development
-" Plugin 'klen/python-mode'     " python-mode, PyLint, Rope, Pydoc
-" Plugin 'tmhedberg/SimpylFold' " No-BS Python code folding for Vim
-Plugin 'scrooloose/nerdtree'    " A tree explorer plugin for Vim
-Plugin 'Xuyuanp/nerdtree-git-plugin' " a plugin of NERDtree showing git status
-Plugin 'ap/vim-css-color'       " Preview colors in source code while editing
-Plugin 'nvie/vim-flake8'        " Flake8 plugin for Vim
-Plugin 'bkad/CamelCaseMotion'   " provide CamelCase motion through words
-Plugin 'pangloss/vim-javascript' " JavaScript indentation and syntax support
-Plugin 'briancollins/vim-jst'   " highlight and indent JST/EJS syntax
-Plugin 'elzr/vim-json'          " a better JSON for Vim
-Plugin 'chase/vim-ansible-yaml' " Add additional support for Ansible/YAML
-Plugin 'vim-scripts/fountain.vim' " Syntax for Fountain screenplay files
-Plugin 'vim-ruby/vim-ruby'      " Vim/Ruby configuration files
-Plugin 'tpope/vim-rails'        " Ruby on Rails power tools
-Plugin 'mxw/vim-jsx'            " React JSX syntax highlighting and indenting
-Plugin 'othree/javascript-libraries-syntax.vim' " syntax for JS libraries
-Plugin 'hail2u/vim-css3-syntax' " add CSS3 support to syntax/css.vim
-Plugin 'mustache/vim-mustache-handlebars' " mustache + handlebars mode for Vim
-Plugin 'Shutnik/jshint2.vim'    " JavaScript code quality checker
-Plugin 'dag/vim2hs'             " vim for Haskell
-Plugin 'pbrisbin/vim-syntax-shakespeare' " Haskell HTML template highlighting
-Plugin 'easymotion/vim-easymotion' " Vim motions on speed!
-Plugin 'groenewege/vim-less'    " vim syntax for LESS (dynamic CSS)
-Plugin 'tfnico/vim-gradle'      " recognize .gradle files as groovy syntax
-Plugin 'mhinz/vim-startify'     " the fancy start screen for Vim
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'hdima/python-syntax'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'Townk/vim-autoclose'
+" Plugin 'davidhalter/jedi-vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/cSyntaxAfter'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'fatih/vim-go'
+Plugin 'keith/swift.vim'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'eraserhd/vim-ios'
+Plugin 'msanders/cocoa.vim'
+" Plugin 'klen/python-mode'
+" Plugin 'tmhedberg/SimpylFold'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ap/vim-css-color'
+Plugin 'nvie/vim-flake8'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'pangloss/vim-javascript'
+Plugin 'briancollins/vim-jst'
+Plugin 'elzr/vim-json'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'vim-scripts/fountain.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'mxw/vim-jsx'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'Shutnik/jshint2.vim'
+Plugin 'dag/vim2hs'
+Plugin 'pbrisbin/vim-syntax-shakespeare'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'groenewege/vim-less'
+Plugin 'tfnico/vim-gradle'
+Plugin 'mhinz/vim-startify'
+Plugin 'farfanoide/vim-kivy'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-highlight'
 call vundle#end()               " required
 filetype plugin indent on       " required
 " }}}

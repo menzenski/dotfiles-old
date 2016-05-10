@@ -1,2 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/mattmenzenski/Documents/School/Kansas/RAships/2015_Fall_IAIA/2016_03_09_PythonSalarPackage'
+let g:netrw_dirhist_2='/Users/mattmenzenski/Documents/School/Kansas/Coding/2016_03_21_NewLegoSite/ourbricks/public/js'
+let g:netrw_dirhist_3='/Users/mattmenzenski/Documents/School/Kansas/Coding/2016_04_03_LegoSite/server/api/thing'
+let g:netrw_dirhist_4='/Users/mattmenzenski/WebSite/_includes'
+let g:netrw_dirhist_5='/Users/mattmenzenski/Library/texmf/tex/LaTeX/rulesson'
+let g:netrw_dirhist_6='/Users/mattmenzenski/Documents/School/Kansas/RAships/2015_Fall_IAIA/2016_05_02_PythonIAIAPackage/iaia/iaia'
