@@ -187,6 +187,7 @@ set expandtab                   " insert spaces when tab is pressed
 set modelines=1                 " tell Vim to check the last line of this file
 let mapleader=","               " use comma as <leader>
 set hidden                      " hide buffers instead of closing them
+set encoding=utf8
 " edit vimrc with ,ev
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 " reload vimrc with ,sv
