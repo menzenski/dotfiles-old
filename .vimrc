@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'   " let Vundle manage Vundle, required
 Plugin 'bling/vim-airline'      " lean & mean status/tabline for vim
+Plugin 'vim-airline/vim-airline-themes' " collection of themes for vim-airline
 Plugin 'altercation/vim-colors-solarized' " precision colorscheme
 Plugin 'hdima/python-syntax'    " Python syntax highlighting script for Vim
 Plugin 'tpope/vim-fugitive'     " Git wrapper so awesome it should be illegal
@@ -46,6 +47,16 @@ Plugin 'Shutnik/jshint2.vim'    " JavaScript code quality checker
 Plugin 'dag/vim2hs'             " vim for Haskell
 Plugin 'pbrisbin/vim-syntax-shakespeare' " Haskell HTML template highlighting
 Plugin 'easymotion/vim-easymotion' " Vim motions on speed!
+Plugin 'tfnico/vim-gradle'      " use groovy syntax for .gradle files
+Plugin 'mhinz/vim-startify'
+Plugin 'farfanoide/vim-kivy'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'scrooloose/syntastic'   " syntax checking hacks for vim
+Plugin 'venantius/vim-cljfmt'
+Plugin 'tpope/vim-classpath'
 call vundle#end()               " required
 filetype plugin indent on       " required
 " }}}
@@ -62,6 +73,7 @@ set background=dark
 colorscheme solarized
 let g:solarized_termcolors=16
 let g:airline_powerline_fonts=1 " show nice pointy Powerline symbols
+let g:airline_theme='solarized' " use the solarized theme for status bar
 set splitbelow                  " :sv opens a new file below current file
 " }}}
 " Searching {{{
@@ -95,12 +107,20 @@ sunmap w
 sunmap b
 sunmap e
 sunmap ge
+" search for the current visual selection
+vnoremap // y/<C-R>"<CR>
+" treat upprcase W and Q like their lowercase versions
+command! -bang -range=% -complete=file -nargs=* W <line1>,<line2>write<bang> <args>
+command! -bang Q quit<bang>
 " }}}
 " NERDTree {{{
+" open nerdtree on startup if no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " open NERDTree with Ctrl + N
 map <C-N> :NERDTreeToggle<CR>
 " close vim if the only window left open is a NERDTree window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
 " Language-Specific Configuration {{{
 " Python {{{
@@ -140,10 +160,10 @@ au BufNewFile,BufRead *.html,*.css,*.scss,*.xml,*.ejs,*.jst,*.nunjucks,*.njk
 " JavaScript {{{
 " specify libraries for syntax highlighting
 let g:used_javascript_libs = 'jquery,angularjs,react'
-au BufNewFile,BufRead *.js
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
+au BufNewFile,BufRead *.js,*.json
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
     \ set expandtab |
 let g:jsx_ext_required=0        " allow JSX syntax in JavaScript files
 " }}}
@@ -178,6 +198,25 @@ set hidden                      " hide buffers instead of closing them
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 " reload vimrc with ,sv
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Syntastic setup
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_loc_list_height=5
+let g:syntastic_auto_loc_list=0
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_args="--no-eslintrc --config ~/.eslintrc"
+let g:syntastic_error_symbol='❌'
+let g:syntastic_style_error_symbol='⁉️'
+let g:syntastic_warning_symbol='⚠️'
+let g:syntastic_style_warning_symbol='💩'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0

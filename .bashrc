@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# add color to 'ls'
-# alias ls="ls -GFlash" # unsatisfactory
+# configure git status in shell prompt
+source ~/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
 
 # add color to terminal
 test -e ~/.dircolors && \
@@ -13,7 +13,10 @@ alias ls="gls -G -F --color=always"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# tab completion for git commands
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
 
 # Solarized colors in the prompt
 set_prompts() {
@@ -88,6 +91,7 @@ set_prompts() {
     PS1+="\[$hostStyle\]\h" # host
     PS1+="\[$reset$white\]:"
     PS1+="\[$green\]\W"
+    PS1+="\[$cyan\]\$(__git_ps1 ' (%s)')"
     PS1+="\n"
     PS1+="\[$reset$white\]\$ \[$reset\]" # (and reset color)
 
@@ -96,8 +100,7 @@ set_prompts() {
 set_prompts
 unset set_prompts
 
-# delete LaTeX auxiliary files in current directory (use with caution!)
-alias rmtex="rm *.aux *.log *.out *.synctex.gz"
+# tell React to use vim
+export REACT_EDITOR=vim
 
-export NVM_DIR="/Users/mattmenzenski/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export ANDROID_HOME=~/Library/Android/sdk
