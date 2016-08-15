@@ -3,7 +3,7 @@
 # configure git status in shell prompt
 source ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=''
 
 # add color to terminal
 test -e ~/.dircolors && \
@@ -15,8 +15,20 @@ alias egrep="egrep --color=always"
 
 # tab completion for git commands
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+    source $(brew --prefix)/etc/bash_completion
 fi
+
+# enable shorter git aliases: 'gco' instead of 'git co', etc.
+function_exists() {
+    declare -f -F $1 > /dev/null
+    return $?
+}
+for al in `__git_aliases`; do
+    alias g$al="git $al"
+
+    complete_func=_git_$(__git_aliased_command $al)
+    function_exists $complete__func && __git_complete g$al $complete_func
+done
 
 # Solarized colors in the prompt
 set_prompts() {
@@ -86,15 +98,27 @@ set_prompts() {
     PS1="\[\033]0;\w\007\]"
 
     # PS1+="\n" # newline
+    # PS1+="\[$userStyle\]\u" # username
+    # PS1+="\[$reset$white\]@"
+    # PS1+="\[$hostStyle\]\h" # host
+    # PS1+="\[$reset$white\]:"
+    # PS1+="\[$green\]\W"
+    # PS1+="\[$reset$white\]/"
+    # PS1+="\[$cyan\]\$(__git_ps1 '%s')"
+    # PS1+="\n"
+    # PS1+="\[$reset$white\]\$ \[$reset\]" # (and reset color)
+
     PS1+="\[$userStyle\]\u" # username
-    PS1+="\[$reset$white\]@"
+    PS1+="\[$reset$white\] at "
     PS1+="\[$hostStyle\]\h" # host
-    PS1+="\[$reset$white\]:"
+    PS1+="\[$reset$white\] in "
     PS1+="\[$green\]\W"
-    PS1+="\[$cyan\]\$(__git_ps1 ' (%s)')"
+    if [ '$(__git_ps1)' ]; then
+        PS1+="\[$reset$white\] on "
+        PS1+="\[$cyan\]\$(__git_ps1 '%s')"
+    fi
     PS1+="\n"
     PS1+="\[$reset$white\]\$ \[$reset\]" # (and reset color)
-
     export PS1
 }
 set_prompts
